@@ -1,6 +1,6 @@
 package com.gsamtechnology.msvcusuarios.repositories;
 
-import com.gsamtechnology.msvcusuarios.models.entities.Usuario;
+import com.gsamtechnology.msvcusuarios.entities.Usuario;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,17 +1,19 @@
 package com.gsamtechnology.msvcusuarios.resources;
 
-import com.gsamtechnology.msvcusuarios.models.entities.Usuario;
+import com.gsamtechnology.msvcusuarios.entities.Usuario;
 import com.gsamtechnology.msvcusuarios.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(name = "/usuarios")
+@RequestMapping(path = "/usuarios")
 public class UsuarioResource {
 
     @Autowired
@@ -22,18 +24,18 @@ public class UsuarioResource {
         return ResponseEntity.ok(service.findAll());
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<Optional<Usuario>> findById(@PathVariable Long id){
         return ResponseEntity.ok(service.findById(id));
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> save(@RequestBody Usuario usuario){
+    public ResponseEntity<Usuario> save(@Valid @RequestBody Usuario usuario){
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(usuario));
     }
 
-    @PutMapping(value = "/{id}")
-    public ResponseEntity<Usuario> update(@PathVariable Long id, @RequestBody Usuario usuario){
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Usuario> update(@PathVariable Long id, @Valid @RequestBody Usuario usuario){
         Optional<Usuario> usuarioRetorno = service.findById(id);
         if(usuarioRetorno.isPresent()){
             usuario.setId(usuarioRetorno.get().getId());
@@ -42,7 +44,7 @@ public class UsuarioResource {
         return ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
         Optional<Usuario> usuarioRetorno = service.findById(id);
         if(usuarioRetorno.isPresent()){

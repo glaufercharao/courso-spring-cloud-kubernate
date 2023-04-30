@@ -1,6 +1,6 @@
 package com.gsamtechnology.msvcusuarios.services;
 
-import com.gsamtechnology.msvcusuarios.models.entities.Usuario;
+import com.gsamtechnology.msvcusuarios.entities.Usuario;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,11 +1,12 @@
-package com.gsamtechnology.msvcusuarios.models.entities;
+package com.gsamtechnology.msvccursos.models;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "tb_usuarios")
+
 @Data
 public class Usuario {
 
@@ -14,6 +15,7 @@ public class Usuario {
     private Long id;
     private String nome;
     private String email;
+
     private String password;
 
 }

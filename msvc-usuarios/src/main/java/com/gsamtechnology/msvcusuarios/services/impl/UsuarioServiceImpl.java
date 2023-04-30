@@ -1,6 +1,6 @@
 package com.gsamtechnology.msvcusuarios.services.impl;
 
-import com.gsamtechnology.msvcusuarios.models.entities.Usuario;
+import com.gsamtechnology.msvcusuarios.entities.Usuario;
 import com.gsamtechnology.msvcusuarios.repositories.UsuarioRepository;
 import com.gsamtechnology.msvcusuarios.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
