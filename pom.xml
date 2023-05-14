@@ -10,9 +10,8 @@
         <version>2.6.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <groupId>org.gsamtechnology</groupId>
-    <artifactId>courso-spring-cloud-kubernate</artifactId>
+    <groupId>org.gsamtechnology.springcloud.msvc</groupId>
+    <artifactId>curso-kubernetes</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -20,19 +19,9 @@
         <module>msvc-usuarios</module>
         <module>msvc-cursos</module>
     </modules>
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 
 </project>
